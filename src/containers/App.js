@@ -36,7 +36,7 @@ class App extends React.Component {
       return robot.name.toLowerCase().includes(searchfiled.toLowerCase());
     });
 
-    if (robots.length == 0) {
+    if (robots.length === 0) {
       return <h1 className="tc f1">Loading...</h1>;
     } else {
       return (
