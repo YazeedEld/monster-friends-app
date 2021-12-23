@@ -13,4 +13,5 @@ h1 {
 
 #heading {
   text-decoration: underline;
+  word-spacing: 0.4em;
 }

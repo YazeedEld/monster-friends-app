@@ -40,7 +40,7 @@ class App extends React.Component {
     } else {
       return (
         <div className="tc">
-          <h1 className="f1" id="heading">RoboFriends</h1>
+          <h1 className="f1" id="heading">Monster Friends</h1>
           <SearchBox searchChange={this.onSearchChange} />
           <Scroll>
             <ErorBoundry>
