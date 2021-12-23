@@ -8,7 +8,6 @@ import "./App.css";
 
 class App extends React.Component {
   constructor() {
-    // Lifecycle Methods
     super();
     this.state = {
       robots: [],
@@ -17,7 +16,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // Lifecycle Methods
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => {
         return response.json();
@@ -42,7 +40,7 @@ class App extends React.Component {
     } else {
       return (
         <div className="tc">
-          <h1 className="f1">RoboFriends</h1>
+          <h1 className="f1" id="heading">RoboFriends</h1>
           <SearchBox searchChange={this.onSearchChange} />
           <Scroll>
             <ErorBoundry>
