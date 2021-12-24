@@ -1,7 +1,7 @@
 import React from "react";
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
-// import { robots } from "./robots";
+// import { monsters } from "./monsters";
 import Scroll from "../components/Scroll";
 import ErorBoundry from "../components/ErrorBoundry";
 import "./App.css";
@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      robots: [],
+      monsters: [],
       searchfiled: "",
     };
   }
@@ -21,7 +21,7 @@ class App extends React.Component {
         return response.json();
       })
       .then((users) => {
-        this.setState({ robots: users });
+        this.setState({ monsters: users });
       });
   }
 
@@ -30,12 +30,12 @@ class App extends React.Component {
   };
 
   render() {
-    const { robots, searchfiled } = this.state;
-    const filteredRobots = robots.filter((robot) => {
-      return robot.name.toLowerCase().includes(searchfiled.toLowerCase());
+    const { monsters, searchfiled } = this.state;
+    const filteredmonsters = monsters.filter((monsters) => {
+      return monsters.name.toLowerCase().includes(searchfiled.toLowerCase());
     });
 
-    if (robots.length === 0) {
+    if (monsters.length === 0) {
       return <h1 className="tc f1">Loading...</h1>;
     } else {
       return (
@@ -44,7 +44,7 @@ class App extends React.Component {
           <SearchBox searchChange={this.onSearchChange} />
           <Scroll>
             <ErorBoundry>
-              <CardList robots={filteredRobots} />
+              <CardList monsters={filteredmonsters} />
             </ErorBoundry>
           </Scroll>
         </div>
